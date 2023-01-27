@@ -1,0 +1,33 @@
+<div
+  class="flex justify-content-center align-items-stretch"
+  [style]="{ 'margin-top': '8em', 'margin-left': '13em' }"
+>
+  <p-card
+    header="LOGIN"
+    [style]="{ width: '25rem', 'margin-bottom': '2em', 'margin-right': '2em' }"
+  >
+    <ng-template pTemplate="header"> </ng-template>
+    <div [formGroup]="userForm">
+      <input
+        [style]="{ width: '100%' }"
+        type="text"
+        pInputText
+        placeholder="Username"
+        formControlName="email"
+      />
+      <p-divider></p-divider>
+      <input
+        [style]="{ width: '100%' }"
+        type="text"
+        pInputText
+        placeholder="Senha"
+        formControlName="senha"
+      />
+      <p-divider></p-divider>
+      <button 
+      (click)="submitForm()"
+      [style]="{ 'margin-left': '35%' }"
+       pButton>Login</button>
+    </div>
+  </p-card>
+</div>
