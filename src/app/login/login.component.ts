@@ -18,62 +18,59 @@ export class LoginComponent {
 
   constructor(
     private authService: AuthService,
-    private loginService:LoginService,
+    private loginService: LoginService,
     private router: Router,
     public messageService: MessageService
   ) {}
 
-    
-
   submitForm() {
-   if(this.userForm.invalid){
-    console.log("Campos Invalidos")
-    /**********MENSAGEM DE ERRO***************/
-    this.messageService.add({
-      key:'login',
-      severity: "error",
-      summary: "Erro",
-      detail: "Preencha os campos obrigatórios"
-    });
+    if (this.userForm.invalid) {
+      console.log('Campos Invalidos');
+      /**********MENSAGEM DE ERRO***************/
+      this.messageService.add({
+        key: 'login',
+        severity: 'error',
+        summary: 'Erro',
+        detail: 'Preencha os campos obrigatórios',
+      });
 
+      return;
+    }
 
-    return
-   }
+    //  this.authService.login(this.userForm.get('email')?.value,this.userForm.get('senha')?.value)
+    //  .subscribe((res) => {
+    //   // console.log(res)
+    //   this.router.navigate(['/dashboard'])
+    //  }, error => {
+    //   /**********MENSAGEM DE ERRO***************/
+    //   this.messageService.add({
+    //     key:'login',
+    //     severity: "error",
+    //     summary: "Erro",
+    //     detail: "Falha na Autenticação"
+    //   });
 
-   this.authService.login(this.userForm.get('email')?.value,this.userForm.get('senha')?.value)
-   .subscribe((res) => {
-    // console.log(res)
-    this.router.navigate(['/dashboard'])
-   }, error => {
-    /**********MENSAGEM DE ERRO***************/
-    this.messageService.add({
-      key:'login',
-      severity: "error",
-      summary: "Erro",
-      detail: "Falha na Autenticação"
-    });
+    //   console.log(error.error)
+    //   })
 
-    console.log(error.error)
-    })
-  }
+    this.authService
+      .login(
+        this.userForm.get('email')?.value,
+        this.userForm.get('senha')?.value
+      )
+      .subscribe({
+        next: () => this.router.navigate(['/dashboard']),
+        error: () =>
+          this.messageService.add({
+            key: 'login',
+            severity: 'error',
+            summary: 'Erro',
+            detail: 'Falha na Autenticação',
+          }),
+      });
+  } //FIM
 
-
-  
-  //  this.authService.login(this.userForm.get('email')?.value,this.userForm.get('senha')?.value)
-  //  .subscribe((res:any) => {
-  //   next: () => this.router.navigate(['/dashboard']),
-  //   error:() =>  
-  //      this.messageService.add({
-  //         key:'login',
-  //         severity: "error",
-  //         summary: "Erro",
-  //         detail: "Falha na Autenticação"
-  //       })
-  //     })
-  // }
-
-
-  criarConta(){
-    this.router.navigate(['/sign-in'])
+  criarConta() {
+    this.router.navigate(['/sign-in']);
   }
 }

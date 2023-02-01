@@ -24,6 +24,7 @@ import { AuthInterceptorProvider } from './auth.interceptor';
 import { AuthService } from './auth.service';
 import { SignInComponent } from './sign-in/sign-in.component';
 import {ToastModule} from 'primeng/toast';
+import {PasswordModule} from 'primeng/password';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import {ToastModule} from 'primeng/toast';
     ToolbarModule,
     SidebarModule,
     BrowserAnimationsModule,
-    ToastModule
+    ToastModule,
+    PasswordModule
   ],
   providers: [AuthInterceptorProvider, MessageService],
   bootstrap: [AppComponent]
