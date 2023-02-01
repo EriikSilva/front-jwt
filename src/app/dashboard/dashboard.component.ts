@@ -9,7 +9,7 @@ import { LoginService } from '../login/login.service';
 })
 export class DashboardComponent implements OnInit {
 
-  email:any
+  nome:any
 
   constructor(
     private loginService:LoginService,
@@ -17,7 +17,7 @@ export class DashboardComponent implements OnInit {
     ){}
 
   ngOnInit(): void {
-    this.email = localStorage['email']
+    this.nome = localStorage['nome']
   }
 
 }

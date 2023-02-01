@@ -10,7 +10,7 @@ export class AuthService {
   private _isLoggedIn$ = new BehaviorSubject<boolean>(false)
   // private readonly TOKEN_NAME = 'senha_jwt'
   private readonly TOKEN_NAME = 'senha_jwt'
-  private readonly NAME = 'email'
+  private readonly NAME = 'nome'
 
   emailFront:any;
 
@@ -34,7 +34,7 @@ export class AuthService {
       this._isLoggedIn$.next(true)
       localStorage.setItem(this.TOKEN_NAME , token)
       localStorage.setItem(this.NAME, res.nome) 
-      console.log("LOGIN",res)
+      // console.log("LOGIN",res)
     })
    )
   }
