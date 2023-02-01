@@ -7,8 +7,8 @@
 /tmp
 /out-tsc
 /bazel-out
-# ../backend/node_modules
-# ../backend/nodemon.json
+/backend/node_modules
+/backend/nodemon.json
 
 # Node
 /node_modules
