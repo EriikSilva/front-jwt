@@ -2,7 +2,7 @@
 
 <div
   class="flex justify-content-center align-items-stretch"
-  [style]="{ 'margin-top': '8em' }"
+  [style]="{ 'margin-top': '10em' }"
 >
   <p-card
     header="CADASTRO"
@@ -22,10 +22,17 @@
         class="p-button-rounded"
         [style]="{'margin-top': '5px'}"
         routerLink=""
-
       ></button>
     </ng-template>
     <div [formGroup]="userFormCreate">
+      <input
+        [style]="{ width: '100%' }"
+        type="text"
+        pInputText
+        placeholder="Nome e Sobrenome"
+        formControlName="nome"
+      />
+      <p-divider></p-divider>
       <input
         [style]="{ width: '100%' }"
         type="text"

@@ -17,6 +17,7 @@ export class SignInComponent {
 
   userFormCreate = new FormGroup({
     email: new FormControl('', Validators.required),
+    nome: new FormControl('', Validators.required),
     senha: new FormControl(null, Validators.required),
   });
 
@@ -36,13 +37,15 @@ export class SignInComponent {
 
     this.singinService.cadastrarUsuario(this.userFormCreate.value)
     .subscribe((res:any) => {
+      console.log(res)
       this.messageService.add({
         key: 'sigin',
         severity: 'success',
         summary: 'Sucesso',
         detail: 'Conta Criada com Sucesso',
       })
-      this.router.navigate([''])
+      this.userFormCreate.reset()
+     
     }, error => {
       console.log(error.error.message)
       this.messageService.add({

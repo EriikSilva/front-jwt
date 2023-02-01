@@ -10,7 +10,7 @@ export class AuthService {
   private _isLoggedIn$ = new BehaviorSubject<boolean>(false)
   // private readonly TOKEN_NAME = 'senha_jwt'
   private readonly TOKEN_NAME = 'senha_jwt'
-  private readonly EMAIL_NAME = 'email'
+  private readonly NAME = 'email'
 
   emailFront:any;
 
@@ -33,8 +33,8 @@ export class AuthService {
       const token = res.token
       this._isLoggedIn$.next(true)
       localStorage.setItem(this.TOKEN_NAME , token)
-      localStorage.setItem(this.EMAIL_NAME, res.email) 
-      // console.log("LOGIN",res)
+      localStorage.setItem(this.NAME, res.nome) 
+      console.log("LOGIN",res)
     })
    )
   }
@@ -43,7 +43,7 @@ export class AuthService {
 
   private clearAuthData() {
     localStorage.removeItem(this.TOKEN_NAME);
-    localStorage.removeItem(this.EMAIL_NAME);
+    localStorage.removeItem(this.NAME);
     // localStorage.removeItem('expirationDate');
     // localStorage.removeItem('userId');
   }

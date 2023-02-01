@@ -2,7 +2,7 @@
 
 <div
   class="flex justify-content-center align-items-stretch"
-  [style]="{ 'margin-top': '8em' }"
+  [style]="{ 'margin-top': '10em' }"
 >
   <p-card
     header="LOGIN"
@@ -16,7 +16,7 @@
         [style]="{ width: '100%' }"
         type="text"
         pInputText
-        placeholder="Username"
+        placeholder="Email"
         formControlName="email"
       />
       <p-divider></p-divider>
@@ -30,11 +30,13 @@
       <p-divider></p-divider>
       <button 
       (click)="submitForm()"
-      [style]="{ 'margin-left': '13%' }"
+      [style]="{ 'margin-left': '38%' }"
        pButton>Login</button>
+       <br>
+       <p-divider></p-divider>
        <button 
        (click)="criarConta()"
-       [style]="{ 'margin-left': '13%' }"
+       [style]="{ 'margin-left': '33%' }"
         pButton>Criar Conta</button>
     </div>
   </p-card>
