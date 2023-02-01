@@ -28,7 +28,7 @@ Projeto que busca criar sistema de inserção de funcionarios, cargos e estatist
 - Criar uma conta
   - Criar conta com email e senha com validações
 - Dashboard (necessario logar)
-  - Mensagem de boas vindas com o email que o usuario logou (pretendo mudar para nome)
+  - Mensagem de boas vindas com o nome na dashboard
 - Validações
   - Validação de email e senha 
   - Validação de email ao criar uma conta. Verifica se email ja existe no banco de dados. EMAIL(UNIQUE)
