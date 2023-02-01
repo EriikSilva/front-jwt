@@ -12,7 +12,7 @@ import { AppComponent } from './app.component';
 import {ButtonModule} from 'primeng/button';
 import {InputTextModule} from 'primeng/inputtext';
 import {AccordionModule} from 'primeng/accordion';     
-import {MenuItem} from 'primeng/api';         
+import {MenuItem, MessageService} from 'primeng/api';         
 import {DividerModule} from 'primeng/divider'; 
 import {CardModule} from 'primeng/card';
 import { LoginComponent } from './login/login.component';
@@ -22,6 +22,8 @@ import {ToolbarModule} from 'primeng/toolbar';
 import {SidebarModule} from 'primeng/sidebar';
 import { AuthInterceptorProvider } from './auth.interceptor';
 import { AuthService } from './auth.service';
+import { SignInComponent } from './sign-in/sign-in.component';
+import {ToastModule} from 'primeng/toast';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,7 @@ import { AuthService } from './auth.service';
     LoginComponent,
     DashboardComponent,
     ToolbarComponent,
+    SignInComponent,
    
   ],
   imports: [
@@ -44,9 +47,10 @@ import { AuthService } from './auth.service';
     ReactiveFormsModule,
     ToolbarModule,
     SidebarModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ToastModule
   ],
-  providers: [AuthInterceptorProvider],
+  providers: [AuthInterceptorProvider, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

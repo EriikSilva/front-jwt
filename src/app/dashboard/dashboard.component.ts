@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
 import { LoginService } from '../login/login.service';
 
 @Component({
@@ -8,13 +9,15 @@ import { LoginService } from '../login/login.service';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private loginService:LoginService){}
+  email:any
+
+  constructor(
+    private loginService:LoginService,
+    private authService:AuthService
+    ){}
 
   ngOnInit(): void {
-    // this.loginService.getUser()
-    // .subscribe((res:any) => {
-    //     // console.log(res)
-    // })
+    this.email = localStorage['email']
   }
 
 }

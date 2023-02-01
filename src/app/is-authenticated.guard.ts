@@ -23,10 +23,8 @@ export class IsAuthenticatedGuard implements CanActivate{
             tap(isLoggegIn => {
                 //redirecionar
                 if(!isLoggegIn){
-                    this.router.navigate(['login'])
+                    this.router.navigate([''])
                 } 
-        
-
             })
         )
         

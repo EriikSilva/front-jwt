@@ -1,20 +1,18 @@
-<p-toast position="top-right" key="login"></p-toast>
-
 <div
   class="flex justify-content-center align-items-stretch"
   [style]="{ 'margin-top': '8em', 'margin-left': '13em' }"
 >
   <p-card
-    header="LOGIN"
+    header="CADASTRO"
     [style]="{ width: '25rem', 'margin-bottom': '2em', 'margin-right': '2em' }"
   >
     <ng-template pTemplate="header"> </ng-template>
-    <div [formGroup]="userForm">
+    <div [formGroup]="userFormCreate">
       <input
         [style]="{ width: '100%' }"
         type="text"
         pInputText
-        placeholder="Username"
+        placeholder="Email"
         formControlName="email"
       />
       <p-divider></p-divider>
@@ -24,15 +22,12 @@
         pInputText
         placeholder="Senha"
         formControlName="senha"
+        minlength="2"
       />
       <p-divider></p-divider>
-      <button 
-      (click)="submitForm()"
-      [style]="{ 'margin-left': '13%' }"
-       pButton>Login</button>
        <button 
        (click)="criarConta()"
-       [style]="{ 'margin-left': '13%' }"
+       [style]="{ 'margin-left': '30%' }"
         pButton>Criar Conta</button>
     </div>
   </p-card>
