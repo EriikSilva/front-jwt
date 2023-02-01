@@ -32,7 +32,7 @@ Projeto que busca criar sistema de inserção de funcionarios, cargos e estatist
 - Validações
   - Validação de email e senha 
   - Validação de email ao criar uma conta. Verifica se email ja existe no banco de dados. EMAIL(UNIQUE)
-  - Validação de campos obrigatorios pro login e pro criar conta
+  - Validação de campos obrigatorios pro  ```login``` e pro  ```criar conta```
 - JWT
   - O JWT ira guardar sua sessão e garantir que foi autenticado
 # 💾 Instalação
@@ -40,5 +40,6 @@ Projeto que busca criar sistema de inserção de funcionarios, cargos e estatist
 - Clonar o projeto ```git clone https://github.com/EriikSilva/front-jwt.git```
 - Rodar o comando pelo cmd na pasta do projeto ```npm install```
 - Rodar o front com o terminal ```ng serve``` e aceessar ```http://localhost:4200``` :)
+- Caso precise de um backend ->  LINK => https://github.com/EriikSilva/backend-jwt
 
 
