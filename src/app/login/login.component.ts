@@ -59,7 +59,7 @@ export class LoginComponent {
         this.userForm.get('senha')?.value
       )
       .subscribe({
-        next: () => this.router.navigate(['/dashboard']),
+        next: () => {this.router.navigate(['/dashboard']), window.location.reload()},
         error: () =>
           this.messageService.add({
             key: 'login',

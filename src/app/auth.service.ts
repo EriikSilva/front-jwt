@@ -8,6 +8,7 @@ import { LoginService } from './login/login.service';
 })
 export class AuthService {
   private _isLoggedIn$ = new BehaviorSubject<boolean>(false)
+  private _naotaLogado$ = new BehaviorSubject<boolean>(true);
   // private readonly TOKEN_NAME = 'senha_jwt'
   private readonly TOKEN_NAME = 'senha_jwt'
   private readonly NAME = 'nome'
@@ -16,14 +17,18 @@ export class AuthService {
 
 
   isLoggedIn$ = this._isLoggedIn$.asObservable()
+  naoTaLogado$ = this._naotaLogado$.asObservable(); 
+  
 
   getToken(){
     // return this.token
     return localStorage.getItem(this.TOKEN_NAME)
+    
   }
 
   constructor(private loginService:LoginService){
     this._isLoggedIn$.next(!!this.getToken())
+    this._naotaLogado$.next(!this.getToken())
   }
 
   login(email:any,senha:any){
@@ -32,6 +37,7 @@ export class AuthService {
     tap((res:any) => {
       const token = res.token
       this._isLoggedIn$.next(true)
+      this._naotaLogado$.next(true);
       localStorage.setItem(this.TOKEN_NAME , token)
       localStorage.setItem(this.NAME, res.nome) 
       // console.log("LOGIN",res)
