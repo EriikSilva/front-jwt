@@ -15,7 +15,7 @@ Projeto que busca criar sistema de inserção de funcionarios, cargos e estatist
 <br>
 - Front-end:angular com primeng.
 - Back-end:node com express, bcrypt, jwt e mysql. LINK => https://github.com/EriikSilva/backend-jwt 
-- <h1>OBS: LEIA O READAME DO BACKEND PARA QUE TUDO DÊ CERTO</h1>
+- <h1>OBS: LEIA O README DO BACKEND PARA QUE TUDO DÊ CERTO</h1>
 
 <b>Features:</b>
 - Toolbar (Quando Logado)
